@@ -81,7 +81,7 @@ class Projects extends Component {
   toProject = (project, index) => {
     return (
       <div key={project.id} className="Project" style={{backgroundColor: project.bg, width: this.state.projects.length%2!==0 && index===this.state.projects.length-1 ? '100vw' : null}}>
-        <div className="Project-inner">
+        <div>
           <div>
             <h2>{project.fork ? toEmoji('🍴') : null} <a href={project.html_url} target="_blank">{project.name}</a></h2>
             <p>
@@ -98,17 +98,20 @@ class Projects extends Component {
           {
             project.languages && Object.keys(project.languages).length>0
             ?
-            <div className="Chips">
-              <span style={{marginRight: '0.5em'}}>Built with</span> {Object.keys(project.languages).map(this.toLanguage)}
-            </div>   
+            <div>
+              <div>Built with {Object.keys(project.languages).map(this.toLanguage)}</div>   
+              <br/>          
+            </div>
             :
             null
-          }                 
+          }
 
           {
             project.topics.names.length > 0
             ?
-            <div className="Chips">{project.topics.names.map(this.toTopic)}</div>                       
+            <div>
+              <div className="Topics">{project.topics.names.map(this.toTopic)}</div>                       
+            </div>
             :
             null
           }

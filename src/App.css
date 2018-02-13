@@ -58,10 +58,6 @@ a:visited {
   color: white;
 }
 
-.Project-inner {
-  padding: 0 1em;  
-}
-
 .Stats > ul {
   list-style: none;
   padding: 0;
@@ -72,21 +68,11 @@ a:visited {
   margin-left: 1em;
 }
 
-.Chips {
+.Topics {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-flow: row wrap; 
-}
-
-.Language {
-  padding: 0.5em;
-  margin-bottom: 0.5em;
-  margin-right: 0.5em;
-  border-radius: 1em;
-  min-width: 50px;
-
-  background: black;  
+  flex-flow: row wrap;  
 }
 
 .Topic {
@@ -99,6 +85,16 @@ a:visited {
   background: orange;  
 }
 
+.Language {
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+  border-radius: 1em;
+  min-width: 50px;
+
+  background: black;  
+}
+
 .Intro {
   margin: 2em 0; 
 }
@@ -106,17 +102,6 @@ a:visited {
 .Avatar {
   width: 30vh;
   border-radius: 15vh;
-}
-
-.No-user {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.No-user > h3 a {
-  color: skyblue;
 }
 
 @keyframes App-logo-spin {
