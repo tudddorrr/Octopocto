@@ -39,7 +39,7 @@ class User extends Component {
 
           <div className="Stats">
             <ul>
-              <li>{this.state.user.public_repos} repos</li>          
+              <li>{this.state.user.public_repos} {this.state.user.public_repos===1 ? 'project' : 'projects'}</li>          
               <li><a href={this.state.user.blog} style={{color: 'black', cursor: 'pointer'}} target="_blank">{this.state.user.blog}</a></li>
               <li>{this.state.user.location}</li>
               {this.state.user.hireable ? <li>Looking for work!</li> : null}              
