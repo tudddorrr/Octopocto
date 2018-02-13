@@ -72,7 +72,7 @@ class Projects extends Component {
             return p1.created_at === p2.created_at ? 0 : p1.created_at > p2.created_at ? -1 : 1;
           }).map(this.toProject)
           :
-          <div>You have no public projects or there was an error with the GitHub API</div>            
+          <div>{getUsername()} has no public projects or there was an error with the GitHub API<br/><br/></div>            
         }
       </div>
     );

@@ -50,11 +50,17 @@ class User extends Component {
         <div className="Projects">
           <div className="Project" style={{width: '100vw'}}>
             <div style={{marginTop: '-2em'}}>            
-              <h1>A few stats...</h1>
+              {this.props.favLanguages.length>0 || this.props.favTopics.length>0 ? <h1>A few stats...</h1> : <h1>No stats to display :(</h1>}
               
-              <h3>Favourite languages</h3>
               {
-                this.props.favLanguages.map(this.toLanguage)
+                this.props.favLanguages.length > 0
+                ?
+                <div>
+                  <h3>Favourite languages</h3>
+                  {this.props.favLanguages.map(this.toLanguage)}
+                </div>
+                :
+                null
               }
 
               <br/><br/>
