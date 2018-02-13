@@ -59,9 +59,15 @@ class User extends Component {
 
               <br/><br/>
 
-              <h3>Favourite topics</h3>
               {
-                this.props.favTopics.map(this.toTopic)
+                this.props.favTopics.length > 0
+                ?
+                <div>
+                  <h3>Favourite topics</h3>
+                  {this.props.favTopics.map(this.toTopic)}
+                </div>
+                :
+                null
               }
             </div>
           </div>
