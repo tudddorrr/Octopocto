@@ -112,11 +112,23 @@ a:visited {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 50vh;
 }
 
-.No-user > h3 a {
-  color: skyblue;
+.Link {
+  color: #7f3bba !important;
+  cursor: pointer;
+}
+
+.Source {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Source img {
+  width: 32px;
+  margin-right: 0.5em;
 }
 
 @keyframes App-logo-spin {

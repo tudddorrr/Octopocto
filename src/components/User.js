@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getUsername } from '../Utils'
+import { getUsername, titleCase } from '../Utils'
 import randomColor from 'randomcolor'
 
 class User extends Component {
@@ -11,7 +11,7 @@ class User extends Component {
   }
 
   componentDidMount() {
-    document.title = "Octopocto: " + getUsername() + "'s Portfolio"    
+    document.title = titleCase(getUsername()) + "'s Portfolio"    
     let api_root = 'https://api.github.com'
 
     // fetch the user
@@ -22,7 +22,7 @@ class User extends Component {
     })
     .catch((error) => {
       console.error(error)
-    });
+    })
   }
 
   appInfo() {
@@ -41,7 +41,7 @@ class User extends Component {
           <div className="Stats">
             <ul>
               <li>{this.state.user.public_repos} {this.state.user.public_repos===1 ? 'project' : 'projects'}</li>          
-              <li><a href={this.state.user.blog} style={{color: 'black', cursor: 'pointer'}} target="_blank">{this.state.user.blog}</a></li>
+              <li><a href={this.state.user.blog} className="Link" target="_blank">{this.state.user.blog}</a></li>
               <li>{this.state.user.location}</li>
               {this.state.user.hireable ? <li>Looking for work!</li> : null}              
             </ul>
@@ -84,7 +84,7 @@ class User extends Component {
           <h1>{this.state.user.name ? this.state.user.name + '\'s' : 'Their'} Projects...</h1>          
         </div>
       </div>
-    );
+    )
   }
 
   toLanguage = (language) => {

@@ -29,8 +29,8 @@ class Projects extends Component {
           this.props.addLanguages(Object.keys(languages))
 
           // get the topics
-          let topicsUrl = api_root + '/repos/' + getUsername() + '/' + repo.name + '/topics' + this.appInfo();
-          let topicsHeaders = {Accept: 'application/vnd.github.mercy-preview+json'};
+          let topicsUrl = api_root + '/repos/' + getUsername() + '/' + repo.name + '/topics' + this.appInfo()
+          let topicsHeaders = {Accept: 'application/vnd.github.mercy-preview+json'}
           return this.getProjectData(topicsUrl, topicsHeaders)       
         })
         .then(topics => {
@@ -44,7 +44,7 @@ class Projects extends Component {
     })
     .catch((error) => {
       console.error(error)
-    });
+    })
   }
 
   getProjectData(url, headers) {
@@ -55,7 +55,7 @@ class Projects extends Component {
     })
     .catch((error) => {
       console.error(error)
-    });
+    })
   }
 
   appInfo() {
@@ -69,13 +69,13 @@ class Projects extends Component {
           this.state.projects.length > 0
           ? 
           this.state.projects.sort((p1, p2) => {
-            return p1.created_at === p2.created_at ? 0 : p1.created_at > p2.created_at ? -1 : 1;
+            return p1.created_at === p2.created_at ? 0 : p1.created_at > p2.created_at ? -1 : 1
           }).map(this.toProject)
           :
           <div>{getUsername()} has no public projects or there was an error with the GitHub API<br/><br/></div>            
         }
       </div>
-    );
+    )
   }
 
   toProject = (project, index) => {

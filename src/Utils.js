@@ -15,3 +15,7 @@ export const getUsername = () => {
   let user = url[url.length-1].split('?')[1]
   return user
 }
+
+export const titleCase = (text) => {
+  return text.toUpperCase().substring(0, 1).concat(text.substring(1, text.length))
+}
