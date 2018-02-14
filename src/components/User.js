@@ -11,6 +11,7 @@ class User extends Component {
   }
 
   componentDidMount() {
+    document.title = "Octopocto: " + getUsername() + "'s Portfolio"    
     let api_root = 'https://api.github.com'
 
     // fetch the user
@@ -87,7 +88,7 @@ class User extends Component {
   }
 
   toLanguage = (language) => {
-    let colour = Object.keys(this.props.languageColours).length>0 ? this.props.languageColours[language.name].color : 'white'
+    let colour = Object.keys(this.props.languageColours).length>0 && this.props.languageColours[language.name] ? this.props.languageColours[language.name].color : 'white'
     return <span key={language.name} className="Language" style={{color: colour}}>{language.name}</span>
   }
 

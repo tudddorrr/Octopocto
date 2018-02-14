@@ -4,6 +4,7 @@ import User from '../components/User'
 import Projects from '../components/Projects'
 import { getUsername } from '../Utils'
 import _ from 'lodash'
+import NoUser from '../components/NoUser';
 
 class Home extends Component {
   constructor(props) {
@@ -16,8 +17,6 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    document.title = "Octopocto: " + getUsername() + "'s Portfolio"
-
     // fetch language colours
     fetch('https://raw.githubusercontent.com/ozh/github-colors/master/colors.json')
     .then(res => res.json())
@@ -25,11 +24,9 @@ class Home extends Component {
   }
 
   render() {
-    if(getUsername()===null) {
+    if(!getUsername()) {
       return (
-        <div className="No-user">
-          <h3>Go to <a href="https://sekaru.github.io/Octopocto/?user=sekaru">sekaru.github.io/octopocto/?user=[username]</a> to look at a generated portfolio!</h3>
-        </div>
+        <NoUser/>
       )
     }
 

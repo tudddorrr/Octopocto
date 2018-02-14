@@ -10,8 +10,8 @@ export const toEmoji = (emoji) => {
 }
 
 export const getUsername = () => {
-  let url = new URL(window.location.href)
-  let user = url.searchParams.get("user");
-
-  return user;
+  let trimProtocol = window.location.href.split('//')[1]
+  let url = trimProtocol.split('/')
+  let user = url[url.length-1].split('?')[1]
+  return user
 }
